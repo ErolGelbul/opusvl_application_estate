@@ -34,6 +34,7 @@ class EstateProperty(models.Model):
         "Available From",
         default=lambda self: self._default_date_availability(),
         copy=False,
+        help="When will the property be available?",
     )
     expected_price = fields.Float("Expected Price", required=True)
     selling_price = fields.Float("Selling Price", copy=False, readonly=True)
@@ -53,6 +54,7 @@ class EstateProperty(models.Model):
             ("W", "West"),
         ],
         string="Garden Orientation",
+        help="Which direction is the garden facing?",
     )
     state = fields.Selection(
         selection=[
@@ -66,9 +68,12 @@ class EstateProperty(models.Model):
         required=True,
         copy=False,
         default="new",
+        help="At what stage the process is in",
     )
     # Special field
-    active = fields.Boolean("Active", default=True)
+    active = fields.Boolean(
+        "Active", default=True, help="Special field, turn the record On or Off"
+    )
 
     # Relations
     property_type_id = fields.Many2one("estate.property.type", string="Property Type")
@@ -76,14 +81,16 @@ class EstateProperty(models.Model):
         "res.users", string="Salesman", default=lambda self: self.env.user
     )
     buyer_id = fields.Many2one("res.partner", string="Buyer", readonly=True, copy=False)
-    tag_ids = fields.Many2many("estate.property.tag", string="Tags")
+    tag_ids = fields.Many2many(
+        "estate.property.tag", string="Tags", help="Example: Cozy, Warm, Modern etc."
+    )
     offer_ids = fields.One2many("estate.property.offer", "property_id", string="Offers")
 
     # Computed
     total_area = fields.Integer(
         "Total Area (sqm)",
         compute="_compute_total_area",
-        help="Total area computed by summing the living area and the garden area",
+        help="Total area = Garden area + Living area.",
     )
     best_price = fields.Float(
         "Best Offer", compute="_compute_best_price", help="Best offer received"

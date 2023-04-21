@@ -27,3 +27,28 @@ class TestEstateProperty(common.TransactionCase):
             "Test Estate Property",
             "Estate property name does not match the expected value.",
         )
+
+
+class TestEstatePropertyTotalArea(common.TransactionCase):
+    def setUp(self):
+        super(TestEstatePropertyTotalArea, self).setUp()
+        self.EstateProperty = self.env["estate.property"]
+
+    def test_total_area_computation(self):
+        """Test the total area computation."""
+        # Prepare test data
+        estate_property_data = {
+            "name": "Test Estate Property",
+            "living_area": 100,
+            "garden_area": 50,
+        }
+
+        # Create a new estate property record
+        new_estate_property = self.EstateProperty.create(estate_property_data)
+
+        # Check if the total area computation is correct
+        self.assertEqual(
+            new_estate_property.total_area,
+            150,
+            "Total area computation is incorrect.",
+        )

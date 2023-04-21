@@ -18,11 +18,10 @@
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## 2. Business
+## 2. Business Requirements
 
-### 2.1 Requirements
-
-All of the requirements are coming from the Odoo: Tutorial series on the website.
+All of the requirements are coming from the Odoo: Tutorial series on the
+website. 
 
 
 
@@ -45,6 +44,11 @@ Base structure for a MVP.
 <p align="center">
   <img src="images/ss4.jpeg">
 </p>
+
+
+### 3.3 Workflows
+
+Here is a quick demonstration on how users can use the app: [video link](https://youtu.be/dchSIBy2p4s)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -357,13 +361,6 @@ docker-compose exec web /usr/bin/odoo -d rd-demo -u estate --test-enable --log-l
 
 
 
-
-
-
-Master Password: qqdq-8589-4rtj
-Database Name: test-db
-Email: test@example.com
-Password: G5kZX6qDVzwstaX
 
 
 Build Docker Container:
