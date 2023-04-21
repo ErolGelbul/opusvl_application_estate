@@ -6,24 +6,17 @@
 
 ### 1.1 Overview
 
-
-
-
-
-
-<p align="center">
-  <img width=300px src="images/cover.gif">
-</p>
+This project is for my application to OpusVL. I gave myself 3 days to learn the
+fudnamentals of Odoo and complete the Getting Started tutorials to show my
+interest in working with the company. Due to my other applications and the risk
+of losing the position to someone else, I decided to do as much as I can in 3 days.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## 2. Business Requirements
 
-All of the requirements are coming from the Odoo: Tutorial series on the
-website. 
-
-
+All of the requirements are coming from the Odoo: Tutorial series on the [website](https://www.odoo.com/documentation/16.0/developer/tutorials/getting_started.html). 
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -316,20 +309,40 @@ Iterate over each property type and calculate its offer_count & offer_ids.
 Finally, we have offer_count and offer_id fields are updated with appropriate values.
 
 
+## 6. Tests
+
+To run the tests, execute the following command:
+
+```bash
+docker-compose exec web /usr/bin/odoo -d rd-demo -u estate --test-enable --log-level=test --stop-after-init --db_host=db --db_port=5432 --db_user=odoo --db_password=odoo
+```
+
+### 6.1 test_estate:
+
+1. test_create_estate_property
+2. test_change_state
+3. test_default_state
+4. test_total_area_computation
+5. test_default_date_availability
+6. test_check_price_difference_constraint
+7. test_action_sold
+8. test_action_cancel
+9. test_estate_property
+10. test_unlink_if_new_or_cancel
+
+
+### 6.2 test_estate_views:
+
+1. test_views_load
+  
+
+### 6.3 test_estate_offer:
+
+1. test_offer_creation_and_price_validation
 
 
 
-
-
-
-
-
-
-
-
-
-
-## Scripts
+## 7. Scripts
 
 After making a change in the local files, use the `update_odoo.sh` script to
 automatically push the custom module files into the Docker container.
@@ -340,35 +353,22 @@ automatically push the custom module files into the Docker container.
 update_odoo.sh <module_name> <file_name>
 ```
 
-## Linting & Formatting
+## 8. Linting & Formatting
 
 I got the pre-commit setup from OCA, it does not belong to me. Also I stole some
 from your linting config files :) I also have a GitHub workflow added. 
 
+## 9. TODO
+
+If I got time left:
+
+- Deploy on EC2
+- Add demo data
+- Add js notification on action.
 
 
-## Running Tests:
+## 10. Contact
 
+Erol Gelbul - [Website](erolgelbul.com) - erolgelbul@gmail.com
 
-
-
-```
-docker-compose exec web /usr/bin/odoo -d rd-demo -u estate --test-enable --log-level=test --stop-after-init --db_host=db --db_port=5432 --db_user=odoo --db_password=odoo
-```
-
-
-
-
-
-
-
-
-Build Docker Container:
-
-```docker-compose up --build -d```
-
-
-Stop the container:
-
-```docker-compose down```
-
+Application link: [Opus Vision Limited Application](erolgelbul.com/opusvl)
