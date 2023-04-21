@@ -6,11 +6,7 @@
 
 ### 1.1 Overview
 
-This project is for my application to OpusVL. I gave myself 3 days to learn the
-fudnamentals of Odoo and complete the Getting Started tutorials to show my
-interest in working with the company. Due to my other applications and the risk
-of losing the position to someone else, I decided to do as much as I can in 3 days.
-
+For my application to OpusVL, I embarked on an ambitious three-day challenge to demonstrate my enthusiasm and commitment to joining the team. My objective was to acquire a solid understanding of Odoo's fundamentals and successfully complete the Getting Started tutorials within this short timeframe. Recognizing the competitive nature of the job market and keen to set myself apart from other candidates, I focused on maximizing my productivity during these three days to showcase my potential as an invaluable asset to the company.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
